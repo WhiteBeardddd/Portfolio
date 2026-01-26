@@ -1,34 +1,50 @@
-"use client"
+"use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const routes = [
-  { name: "Home", link: "/" },
-  { name: "About", link: "/about" },
   { name: "Certifications", link: "/certifications" },
-  { name: "", link: "/"}
+  { name: "Projects", link: "/projects" },
 ];
 
 export default function Navbar() {
-  const location = usePathname()
+  const pathname = usePathname();
 
   return (
-    <div className="">
-      {routes.map((route, index) => {
-        return (
-          <div className="flex flex-col gap-3" key={index}>
-          <Link
-            key={index}
-            href={route.link}
-            className={route.link === location ? "bg-black text-white" : ""}
-          >
-            {route.name}
-          </Link>
-          </div>
-        );
-      })}
-    </div>
+    <nav className="sticky top-0 z-50 h-[60px] backdrop-blur-xl bg-black/40">
+      <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-6">
+
+        {/* Home */}
+        <Link
+          href="/"
+          className={`px-6 py-2 rounded-lg transition font-extrabold
+            ${pathname === "/" 
+              ? "bg-[#e4ae0b] text-black" 
+              : "text-white hover:bg-[#e4ae0b] hover:text-black"}
+          `}
+        >
+          WhiteBeard
+        </Link>
+
+        {/* Routes */}
+        <div className="flex gap-3">
+          {routes.map((route) => (
+            <Link
+              key={route.link}
+              href={route.link}
+              className={`px-6 py-2 rounded-lg transition
+                ${pathname === route.link
+                  ? "bg-[#e4ae0b] text-black"
+                  : "text-white hover:bg-[#e4ae0b] hover:text-black"}
+              `}
+            >
+              {route.name}
+            </Link>
+          ))}
+        </div>
+
+      </div>
+    </nav>
   );
 }
