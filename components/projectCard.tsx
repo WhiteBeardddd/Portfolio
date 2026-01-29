@@ -42,7 +42,7 @@ const ProjectCard = ({
       {/* Image */}
       <div
         className="
-          w-44 h-64
+          w-120 h-64
           rounded-xl
           bg-cover bg-center
           border border-white/20
@@ -64,7 +64,7 @@ const ProjectCard = ({
         <p className="text-white/90 text-justify leading-relaxed">
           {description}
         </p>
-        
+
         <p className="mt-4 text-sm text-[#e4ae0b] opacity-80">
           Click to view →
         </p>

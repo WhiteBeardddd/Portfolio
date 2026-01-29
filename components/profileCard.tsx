@@ -16,16 +16,16 @@ const Card = () => {
         <Icon style="left-[-25px] top-[170px]" img="/images/wireshark_logo.png" />
 
         {/* RIGHT */}
-        <Icon style="right-[-25px] top-[170px]" img="/images/wireshark_logo.png" />
+        <Icon style="right-[-25px] top-[170px]" img="/images/C.png" />
 
         {/* BOTTOM LEFT */}
-        <Icon style="left-[20px] bottom-[50px]" img="/images/wireshark_logo.png" />
+        <Icon style="left-[20px] bottom-[50px]" img="/images/java.svg" />
 
         {/* BOTTOM RIGHT */}
-        <Icon style="right-[20px] bottom-[50px]" img="/images/wireshark_logo.png" />
+        <Icon style="right-[20px] bottom-[50px]" img="/images/Kali-dragon-icon.svg.png" />
 
         {/* BOTTOM CENTER */}
-        <Icon style="left-1/2 -translate-x-1/2 bottom-[-30px]" img="/images/wireshark_logo.png" />
+        <Icon style="left-1/2 -translate-x-1/2 bottom-[-30px]" img="/images/py.png" />
 
         {/* CENTER PROFILE */}
         <button className="absolute inset-0 m-auto w-[220px] h-[220px] p-1 border-2 rounded-full hover:border-gray-400/50 transition-all duration-500">

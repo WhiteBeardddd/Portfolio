@@ -11,8 +11,8 @@ const projects: Project[] = [
     date: "Mar 2024 – May 2024",
     description:
       "Designed scalable multi-site cabling and network architecture for a coworking environment. Created IPv4/IPv6 VLSM addressing and routing (RIPv2, static IPv6). Simulated and validated the network using Cisco Packet Tracer and Lucidchart.",
-    image: "/images/bg.jpg",
-    url: "/files/Boquecosa_CV.pdf"
+    image: "/images/net1.png",
+    url: "/files/Networking 1 Final Project.pdf"
   },
   {
     title: "IP Telephony",
@@ -21,8 +21,8 @@ const projects: Project[] = [
     date: "Nov 2024 – Dec 2024",
     description:
       "Built a multi-branch VoIP-enabled enterprise network using Cisco IOS. Implemented VLANs, Inter-VLAN routing, OSPF/EIGRP, DHCPv4/v6, and applied Layer 2 security with EtherChannel and enterprise services.",
-    image: "/images/charles.png",
-    url: "/files/Boquecosa_CV"
+    image: "/images/net2.png",
+    url: "/files/Networking 2 Final Project.pdf"
   },
   {
     title: "Network Security Simulation – Attacker vs Defender",
@@ -31,8 +31,8 @@ const projects: Project[] = [
     date: "Jun 2025 – Jul 2025",
     description:
       "Conducted penetration testing using Kali Linux tools such as Nmap, Metasploit, and SQLmap. Deployed defenses including iptables, Snort IDS, OpenVAS, and Wireshark. Analyzed attacks across OSI layers and documented mitigation strategies.",
-    image: "/images/bg.jpg",
-    url: "https://github.com/Whitebeardddd"
+    image: "/images/kali_desktop_view.jpg",
+    url: "/files/Network Security Final Project.pdf"
   },
   {
     title: "Peer-to-Peer Encrypted Communication System with Multi-Layer Cipher Integration",
@@ -47,22 +47,42 @@ const projects: Project[] = [
   {
     title: "DCISM Network Infrastructure Runbook",
     projectType: "Final Project · Network Management",
-    role: "Team Leader",
-    date: "Nov 2025 – Dec 2025",
-    description:
-      "Conducted penetration testing using Kali Linux tools such as Nmap, Metasploit, and SQLmap. Deployed defenses including iptables, Snort IDS, OpenVAS, and Wireshark. Analyzed attacks across OSI layers and documented mitigation strategies.",
-    image: "/images/dcism.png",
-    url: "/files/Boquecosa_CV"
-  },
-  {
-    title: "Agrikita",
-    projectType: "CyberOps Cypher Acitivities",
     role: "Member",
     date: "Nov 2025 – Dec 2025",
     description:
       "Conducted penetration testing using Kali Linux tools such as Nmap, Metasploit, and SQLmap. Deployed defenses including iptables, Snort IDS, OpenVAS, and Wireshark. Analyzed attacks across OSI layers and documented mitigation strategies.",
-    image: "/images/bg.jpg",
-    url: "/files/Boquecosa_CV"
+    image: "/images/dcism.png",
+    url: "/files/Network Management Final Project.pdf"
+  },
+  {
+    title: "Agrikita",
+    projectType: "Mobile Development Final Project",
+    role: "Frontend Developer",
+    date: "April 2024 – May 2024",
+    description:
+      "AgriKita is a mobile application built for farmers and vendors in rural areas to connect, sell, buy, and manage their agricultural produce and operations.",
+    image: "/images/agrikita.jpeg",
+    url: "https://github.com/Gnashal/AgriKita"
+  },
+  {
+    title: "Finnbank",
+    projectType: "Systems Integration and Architecture Final Project",
+    role: "FullStack Developer",
+    date: "Jan 2024 – May 2024",
+    description:
+      "A microservice-based online banking system with multiple features and integrated services. Check the GitHub repository for more details on the functionality and implementations.",
+    image: "/images/finbank.png",
+    url: "https://github.com/23000003/Finnbank-web"
+  },
+  {
+    title: "Stockwise",
+    projectType: "Systems Integration and Architecture Final Project",
+    role: "Frontend Developer & Founder",
+    date: "Jun 2024 – Jul 2024",
+    description:
+      "An inventory management web app built with React and Supabase for my Information Management Course",
+    image: "/images/stockwise.png",
+    url: "https://github.com/OppenJayme/SUMMER-IM2-FINAL-PROJECTS"
   },
 ]
 
@@ -83,6 +103,7 @@ export default function ProjectsPage() {
           <ProjectCard key={index} {...project} />
         ))}
       </div>
+    
     </div>
   )
 }
