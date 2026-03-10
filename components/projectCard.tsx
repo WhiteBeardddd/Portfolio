@@ -3,7 +3,7 @@ import React from "react"
 type CardProps = {
   title: string
   projectType: string
-  description: string
+  description: React.ReactNode
   date: string
   role: string
   image: string
@@ -20,57 +20,50 @@ const ProjectCard = ({
   url,
 }: CardProps) => {
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="
-        w-full max-w-5xl
-        flex gap-8
-        p-8
-        rounded-2xl
-        bg-white/5
-        backdrop-blur-md
-        border border-white/10
-        shadow-[0_10px_40px_rgba(0,0,0,0.6)]
-        transition
-        hover:scale-[1.02]
-        hover:border-white/30
-        cursor-pointer
-      "
-    >
-      {/* Image */}
-      <div
-        className="
-          w-120 h-64
-          rounded-xl
-          bg-cover bg-center
-          border border-white/20
-          flex-shrink-0
-        "
-        style={{ backgroundImage: `url(${image})` }}
-      />
+    <div className="w-full max-w-7xl mx-auto mb-10">
+
+      {/* Top row */}
+      <div className="flex items-center justify-between pb-2">
+        <h3 className="text-[21px] font-bold tracking-wide uppercase text-[#e4ae0b]">
+          {title}
+        </h3>
+
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#4d6cdd] underline hover:text-[#f6c742] transition-colors text-m font-bold"
+        >
+          See more
+        </a>
+      </div>
+
+      {/* Divider */}
+      <hr className="border-white/20 mb-5" />
 
       {/* Content */}
-      <div className="flex-1 text-white">
-        <h3 className="text-2xl font-bold mb-1">{title}</h3>
+      <div className="grid grid-cols-[260px_1fr] gap-8 items-start">
 
-        <p className="text-sm text-white/70 mb-3">
-          {projectType} · {role}
-        </p>
+        {/* Image */}
+        <div
+          className="w-[260px] h-[300px] border border-white/20 bg-cover bg-center"
+          style={{ backgroundImage: `url(${image})` }}
+        />
 
-        <p className="text-sm text-white/50 mb-4">{date}</p>
+        {/* Right content */}
+        <div className="text-white/90">
+          <p className="text-white/60 mb-1">{date}</p>
 
-        <p className="text-white/90 text-justify leading-relaxed">
-          {description}
-        </p>
+          <p className="text-white/70 mb-4">
+            {projectType} · {role}
+          </p>
 
-        <p className="mt-4 text-sm text-[#e4ae0b] opacity-80">
-          Click to view →
-        </p>
-
+          <span className="text-[20px] leading-relaxed text-justify">
+            {description}
+          </span>
+        </div>
       </div>
-    </a>
+    </div>
   )
 }
 

@@ -1,7 +1,7 @@
 export type Project = {
   title: string
   projectType: string
-  description: string
+  description: React.ReactNode
   date: string
   role: string
   image: string

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Navbar from "@/components/navbar";
 import TerminalCard from "@/components/terminalCard";
 import ProfileCard from "@/components/profileCard";
 
@@ -15,7 +14,7 @@ const contacts = [
   {
     label: "GitHub",
     href: "https://github.com/Whitebeardddd",
-    icon: "/images/git.png",
+    icon: "/images/githublogo.png",
   },
   {
     label: "Facebook",
@@ -33,8 +32,13 @@ const contacts = [
     icon: "/images/instagram.png",
   },
   {
-    label: "My CV",
+    label: "Curriculum Vitae",
     href: "files/Boquecosa_CV.pdf",
+    icon: "/images/pdf.png",
+  },
+  {
+    label: "Resume",
+    href: "files/BoquecosaResume.pdf",
     icon: "/images/pdf.png",
   },
 ];
@@ -72,9 +76,9 @@ export default function Home() {
         {/* Contact / Socials */}
         <section className="relative z-20 container mx-auto px-6 mt-16 pb-15">
           <h1 className="text-center text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight pt-6 pb-10">
-          Contact <span className="text-[#e4ae0b]">Me</span>
-        </h1>
-          <div className="flex flex-wrap justify-center gap-6">
+            Contact <span className="text-[#e4ae0b]">Me</span>
+          </h1>
+          <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
             {contacts.map((item) => (
               <motion.a
                 key={item.label}
@@ -104,11 +108,10 @@ export default function Home() {
             ))}
           </div>
         </section>
-
       </main>
 
       <footer className="w-full text-center py-6 text-gray-400 border-t border-gray-800">
-        Personal Portfolio 2025
+        Personal Portfolio 2026 ©
       </footer>
     </>
   );

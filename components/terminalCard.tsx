@@ -12,7 +12,11 @@ Date of Birth: September 8, 2004
 Address: Babag 1, Lapu-Lapu City, Cebu, Philippines
 School: University of San Carlos (Expected Graduation: 2027)
 Status: BS Information Technology Student | Year 3
-Hobby: I play survival games, moba, and watch anime
+isActive: True
+Philosophy: "The real networking is the 
+            friends we made along the way",
+            "I use DFS to clear 
+            dungeons in Valheim"
     `.trim(),
   },
   {
@@ -26,12 +30,11 @@ Skills: Networking, CyberOps,
     `.trim(),
   },
   {
-    cmd: "cat studentroadmap.txt",
+    cmd: "cat studentHobbies.txt",
     out: `
-Philosophy: "The real networking is the 
-            friends we made along the way"
-Dota MMR: Divine III | 5k :)
-isActive: True
+Hobby: I play survival games, moba, and watch anime
+Dota: 4k hours played | Divine III | 5k :)
+Valheim: 1.4 hours played | i love building stuffs here
     `.trim(),
   },
 ];
