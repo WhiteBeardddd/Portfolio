@@ -99,20 +99,20 @@ export default function CertificationsPage() {
   }, {} as Record<Category, number>)
 
   return (
-    <div className="px-6 pb-24">
+    <div className="px-4 sm:px-6 pb-24">
       {/* Header */}
-      <h1 className="text-center text-7xl font-extrabold tracking-tight pt-16 pb-2">
+      <h1 className="text-center text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight pt-10 sm:pt-16 pb-2">
         Certifications & Trainings
       </h1>
 
-      <p className="text-center text-lg md:text-xl lg:text-2xl font-medium tracking-tight">
+      <p className="text-center text-base sm:text-lg md:text-xl lg:text-2xl font-medium tracking-tight mt-1">
         I earned these with consistent
         <span className="text-[#e4ae0b]"> hardwork</span> and
         <span className="text-[#e4ae0b]"> coffee</span>
       </p>
 
       {/* Filter Tabs */}
-      <div className="mt-12 flex flex-wrap justify-center gap-3">
+      <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-2 sm:gap-3">
         {categories.map((cat) => {
           const isActive = activeCategory === cat
           return (
@@ -120,7 +120,7 @@ export default function CertificationsPage() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`
-                px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-200
+                px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-200
                 ${isActive
                   ? `${categoryColors[cat]} ${categoryBg[cat]} border-opacity-100 scale-105`
                   : "text-gray-400 border-white/10 hover:border-white/30 hover:text-white"
@@ -128,7 +128,7 @@ export default function CertificationsPage() {
               `}
             >
               {cat}
-              <span className={`ml-2 text-xs font-bold opacity-70`}>
+              <span className="ml-1.5 sm:ml-2 text-xs font-bold opacity-70">
                 {counts[cat]}
               </span>
             </button>
@@ -138,13 +138,13 @@ export default function CertificationsPage() {
 
       {/* Section label */}
       {activeCategory !== "All" && (
-        <p className={`text-center mt-6 text-sm font-semibold uppercase tracking-widest ${categoryColors[activeCategory]}`}>
+        <p className={`text-center mt-5 sm:mt-6 text-xs sm:text-sm font-semibold uppercase tracking-widest ${categoryColors[activeCategory]}`}>
           — {activeCategory} —
         </p>
       )}
 
       {/* Cards Grid */}
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div className="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 max-w-6xl mx-auto">
         {filtered.map((cert, index) => (
           <CertCard key={index} {...cert} />
         ))}

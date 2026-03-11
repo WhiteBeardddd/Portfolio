@@ -47,24 +47,24 @@ export default function Home() {
   return (
     <>
       <main className="relative min-h-screen w-full text-white">
-        <h1 className="text-center text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight pt-16 pb-2">
+        <h1 className="text-center text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight pt-10 sm:pt-16 pb-2 px-4">
           HELLO I AM <span className="text-[#e4ae0b]">CHARLES</span>
         </h1>
 
-        <p className="text-center text-lg md:text-xl lg:text-2xl font-medium tracking-tight mt-0">
+        <p className="text-center text-sm sm:text-lg md:text-xl lg:text-2xl font-medium tracking-tight mt-0 px-4">
           I use "<span className="text-[#e4ae0b]">whosyourdaddy</span>" and "
           <span className="text-[#e4ae0b]">aezakmi</span>"
           because I only have 20Php to play at kuya JBoy's comshop.
         </p>
 
         {/* Content */}
-        <div className="relative z-20 container mx-auto px-6 py-24 pb-0 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-20 container mx-auto px-4 sm:px-6 py-12 sm:py-24 pb-0 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Side */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="mb-6"
+            className="mb-0 sm:mb-6"
           >
             <TerminalCard />
           </motion.div>
@@ -74,11 +74,11 @@ export default function Home() {
         </div>
 
         {/* Contact / Socials */}
-        <section className="relative z-20 container mx-auto px-6 mt-16 pb-15">
-          <h1 className="text-center text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight pt-6 pb-10">
+        <section className="relative z-20 container mx-auto px-4 sm:px-6 mt-10 sm:mt-16 pb-15">
+          <h1 className="text-center text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight pt-6 pb-6 sm:pb-10">
             Contact <span className="text-[#e4ae0b]">Me</span>
           </h1>
-          <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 max-w-4xl mx-auto">
             {contacts.map((item) => (
               <motion.a
                 key={item.label}
@@ -87,10 +87,10 @@ export default function Home() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 className="
-                  flex items-center gap-3
-                  px-6 py-3 rounded-full
+                  flex items-center gap-2 sm:gap-3
+                  px-4 sm:px-6 py-2 sm:py-3 rounded-full
                   border border-gray-700
-                  text-gray-300 font-medium
+                  text-gray-300 text-sm sm:text-base font-medium
                   transition
                   hover:bg-[#e4ae0b]/10
                   hover:text-[#e4ae0b]
@@ -100,8 +100,9 @@ export default function Home() {
                 <Image
                   src={item.icon}
                   alt={item.label}
-                  width={50}
-                  height={50}
+                  width={28}
+                  height={28}
+                  className="w-6 h-6 sm:w-8 sm:h-8"
                 />
                 <span>{item.label}</span>
               </motion.a>
@@ -110,7 +111,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="w-full text-center py-6 text-gray-400 border-t border-gray-800">
+      <footer className="w-full text-center py-6 text-gray-400 border-t border-gray-800 text-sm sm:text-base">
         Personal Portfolio 2026 ©
       </footer>
     </>

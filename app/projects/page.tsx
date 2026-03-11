@@ -110,7 +110,7 @@ const projects: (Project & { category: Category })[] = [
           <li>Implemented alarm notification system triggered by nearby emergency signals.</li>
           <li>Designed user-friendly interface for real-time alert monitoring.</li>
         </ul>
-        <h1 className="font-bold mb-2 text-2xl">Repository Links</h1>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Repository Links</h1>
         <ul className="list-disc ml-6 space-y-2">
           <li>Frontend: <a href="https://github.com/WhiteBeardddd/EV-Alert-System-FrontEnd" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
           <li>BackEnd: <a href="https://github.com/Gnashal/evalert-api" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
@@ -133,7 +133,7 @@ const projects: (Project & { category: Category })[] = [
           <li>Implemented product listing, buying, and selling functionalities.</li>
           <li>Designed responsive frontend interface for rural user accessibility.</li>
         </ul>
-        <h1 className="font-bold mb-2 text-2xl">Repository Links</h1>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Repository Links</h1>
         <ul className="list-disc ml-6 space-y-2">
           <li>Frontend: <a href="https://github.com/Gnashal/AgriKita" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
           <li>BackEnd: <a href="https://github.com/Gnashal/Agrikita-backendi" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
@@ -156,7 +156,7 @@ const projects: (Project & { category: Category })[] = [
           <li>Implemented secure authentication, transaction handling, and service integration.</li>
           <li>Integrated multiple backend services with scalable system design.</li>
         </ul>
-        <h1 className="font-bold mb-2 text-2xl">Repository Links</h1>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Repository Links</h1>
         <ul className="list-disc ml-6 space-y-2">
           <li>Frontend: <a href="https://github.com/23000003/Finnbank-web" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
           <li>BackEnd: <a href="https://github.com/23000003/Finnbank" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
@@ -194,7 +194,6 @@ const categoryColors: Record<Category, string> = {
   Security: "text-blue-400 border-blue-400",
   Mobile: "text-pink-400 border-pink-400",
   "Web & Fullstack": "text-purple-400 border-purple-400",
-  // Systems: "text-orange-400 border-orange-400",
 }
 
 const categoryBg: Record<Category, string> = {
@@ -203,7 +202,6 @@ const categoryBg: Record<Category, string> = {
   Security: "bg-blue-400/10",
   Mobile: "bg-pink-400/10",
   "Web & Fullstack": "bg-purple-400/10",
-  // Systems: "bg-orange-400/10",
 }
 
 export default function ProjectsPage() {
@@ -221,18 +219,18 @@ export default function ProjectsPage() {
   }, {} as Record<Category, number>)
 
   return (
-    <div className="px-6 pb-24">
-      <h1 className="text-center text-7xl font-extrabold tracking-tight pt-16 pb-2">
+    <div className="px-4 sm:px-6 pb-24">
+      <h1 className="text-center text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight pt-10 sm:pt-16 pb-2">
         Projects
       </h1>
 
-      <p className="text-center text-lg md:text-xl lg:text-2xl font-medium tracking-tight">
+      <p className="text-center text-base sm:text-lg md:text-xl lg:text-2xl font-medium tracking-tight mt-1">
         My School <span className="text-[#e4ae0b]">Projects</span> and{" "}
         <span className="text-[#e4ae0b]">Shenanigans</span>
       </p>
 
       {/* Filter Tabs */}
-      <div className="mt-12 flex flex-wrap justify-center gap-3">
+      <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-2 sm:gap-3">
         {categories.map((cat) => {
           const isActive = activeCategory === cat
           return (
@@ -240,7 +238,7 @@ export default function ProjectsPage() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`
-                px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-200
+                px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-200
                 ${isActive
                   ? `${categoryColors[cat]} ${categoryBg[cat]} border-opacity-100 scale-105`
                   : "text-gray-400 border-white/10 hover:border-white/30 hover:text-white"
@@ -248,7 +246,7 @@ export default function ProjectsPage() {
               `}
             >
               {cat}
-              <span className="ml-2 text-xs font-bold opacity-70">
+              <span className="ml-1.5 sm:ml-2 text-xs font-bold opacity-70">
                 {counts[cat]}
               </span>
             </button>
@@ -258,13 +256,13 @@ export default function ProjectsPage() {
 
       {/* Section label */}
       {activeCategory !== "All" && (
-        <p className={`text-center mt-6 text-sm font-semibold uppercase tracking-widest ${categoryColors[activeCategory]}`}>
+        <p className={`text-center mt-5 sm:mt-6 text-xs sm:text-sm font-semibold uppercase tracking-widest ${categoryColors[activeCategory]}`}>
           — {activeCategory} —
         </p>
       )}
 
       {/* Project Cards */}
-      <div className="mt-8 flex flex-col gap-12 items-center">
+      <div className="mt-6 sm:mt-8 flex flex-col gap-8 sm:gap-12 items-center">
         {filtered.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
