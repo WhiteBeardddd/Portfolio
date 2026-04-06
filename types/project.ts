@@ -1,7 +1,9 @@
+import type { ReactNode } from "react"
+
 export type Project = {
   title: string
   projectType: string
-  description: React.ReactNode
+  description: ReactNode
   date: string
   role: string
   image: string
