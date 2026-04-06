@@ -234,7 +234,7 @@ export default function Home() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                variants={fadeUp}
+                variants={fadeUp as any}
                 className="group relative flex flex-col rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:border-[#e4ae0b]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#e4ae0b]/5"
               >
                 {/* Image */}
@@ -309,7 +309,7 @@ export default function Home() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                variants={fadeUp}
+                variants={fadeUp as any}
                 className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:border-[#e4ae0b]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#e4ae0b]/5"
               >
                 {/* Image */}
@@ -378,7 +378,7 @@ export default function Home() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  variants={fadeUp}
+                  variants={fadeUp as any}
                   whileHover={{ scale: 1.05 }}
                   className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/10 bg-white/5 text-gray-300 text-sm font-medium transition-all duration-200 hover:bg-[#e4ae0b]/10 hover:text-[#e4ae0b] hover:border-[#e4ae0b]/50"
                 >
