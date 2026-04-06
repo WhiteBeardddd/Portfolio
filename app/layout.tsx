@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,6 +50,9 @@ export default function RootLayout({
           <Navbar />
           {children}
         </div>
+        {process.env.NEXT_PUBLIC_TEMPO && (
+          <Script src="https://cdn.tempoplatform.com/tempo-devtools.js" strategy="beforeInteractive" />
+        )}
       </body>
     </html>
   );

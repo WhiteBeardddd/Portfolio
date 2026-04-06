@@ -219,18 +219,39 @@ export default function ProjectsPage() {
   }, {} as Record<Category, number>)
 
   return (
-    <div className="px-4 sm:px-6 pb-24">
-      <h1 className="text-center text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight pt-10 sm:pt-16 pb-2">
-        Projects
-      </h1>
+    <div className="relative min-h-screen pb-24">
+      {/* Hero */}
+      <div className="relative px-4 sm:px-6 pt-14 sm:pt-20 pb-10 text-center">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-[#e4ae0b]/8 blur-[100px] rounded-full pointer-events-none" />
+        <p className="text-xs sm:text-sm uppercase tracking-widest text-[#e4ae0b] font-semibold mb-3">
+          ✦ My Work
+        </p>
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+          School <span className="text-[#e4ae0b]">Projects</span>
+        </h1>
+        <p className="mt-3 text-gray-400 text-sm sm:text-base max-w-md mx-auto">
+          Academic projects, prototypes &amp; shenanigans built along the way.
+        </p>
 
-      <p className="text-center text-base sm:text-lg md:text-xl lg:text-2xl font-medium tracking-tight mt-1">
-        My School <span className="text-[#e4ae0b]">Projects</span> and{" "}
-        <span className="text-[#e4ae0b]">Shenanigans</span>
-      </p>
+        {/* Stats row */}
+        <div className="mt-8 flex justify-center gap-6 sm:gap-10">
+          {(["All", "Networking", "Security", "Mobile", "Web & Fullstack"] as Category[]).slice(1).map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className="flex flex-col items-center gap-1 group"
+            >
+              <span className={`text-xl sm:text-2xl font-extrabold transition-colors ${activeCategory === cat ? categoryColors[cat].split(" ")[0] : "text-white"}`}>
+                {counts[cat]}
+              </span>
+              <span className="text-gray-500 text-xs group-hover:text-gray-300 transition-colors">{cat}</span>
+            </button>
+          ))}
+        </div>
+      </div>
 
       {/* Filter Tabs */}
-      <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-2 sm:gap-3">
+      <div className="px-4 sm:px-6 flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
         {categories.map((cat) => {
           const isActive = activeCategory === cat
           return (
@@ -238,38 +259,40 @@ export default function ProjectsPage() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`
-                px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-200
+                px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold border transition-all duration-200
                 ${isActive
-                  ? `${categoryColors[cat]} ${categoryBg[cat]} border-opacity-100 scale-105`
-                  : "text-gray-400 border-white/10 hover:border-white/30 hover:text-white"
+                  ? `${categoryColors[cat]} ${categoryBg[cat]} shadow-lg`
+                  : "text-gray-400 border-white/10 bg-white/5 hover:border-white/20 hover:text-white"
                 }
               `}
             >
               {cat}
-              <span className="ml-1.5 sm:ml-2 text-xs font-bold opacity-70">
-                {counts[cat]}
-              </span>
+              <span className="ml-1.5 text-xs font-bold opacity-60">{counts[cat]}</span>
             </button>
           )
         })}
       </div>
 
-      {/* Section label */}
-      {activeCategory !== "All" && (
-        <p className={`text-center mt-5 sm:mt-6 text-xs sm:text-sm font-semibold uppercase tracking-widest ${categoryColors[activeCategory]}`}>
-          — {activeCategory} —
+      {/* Results count */}
+      <div className="px-4 sm:px-6 max-w-5xl mx-auto mb-5">
+        <p className="text-gray-500 text-sm">
+          Showing <span className="text-white font-semibold">{filtered.length}</span> project{filtered.length !== 1 ? "s" : ""}
+          {activeCategory !== "All" && <> in <span className={categoryColors[activeCategory].split(" ")[0]}>{activeCategory}</span></>}
         </p>
-      )}
+      </div>
 
       {/* Project Cards */}
-      <div className="mt-6 sm:mt-8 flex flex-col gap-8 sm:gap-12 items-center">
+      <div className="px-4 sm:px-6 flex flex-col gap-5 sm:gap-6 max-w-5xl mx-auto">
         {filtered.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-center text-gray-500 mt-16">No projects in this category yet.</p>
+        <div className="text-center mt-20">
+          <p className="text-4xl mb-3">🔍</p>
+          <p className="text-gray-500">No projects in this category yet.</p>
+        </div>
       )}
     </div>
   )

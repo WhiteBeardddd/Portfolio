@@ -5,56 +5,58 @@ export type Certificate = {
   image: string
   url: string
   date: string
+  category?: string
 }
 
-const CertCard = ({ title, image, url, date }: Certificate) => {
+const categoryBadge: Record<string, string> = {
+  Cybersecurity: "text-blue-400 border-blue-400/40 bg-blue-400/10",
+  Networking: "text-green-400 border-green-400/40 bg-green-400/10",
+  Cloud: "text-purple-400 border-purple-400/40 bg-purple-400/10",
+  Events: "text-pink-400 border-pink-400/40 bg-pink-400/10",
+  Hackathon: "text-orange-400 border-orange-400/40 bg-orange-400/10",
+}
+
+const CertCard = ({ title, image, url, date, category }: Certificate) => {
+  const badgeClass = category ? categoryBadge[category] ?? "text-gray-400 border-gray-400/40 bg-gray-400/10" : ""
+
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="
-        w-full
-        rounded-2xl
-        bg-white/5
-        backdrop-blur-md
-        border border-white/10
-        shadow-[0_10px_40px_rgba(0,0,0,0.6)]
-        transition
-        hover:scale-[1.03]
-        hover:border-white/30
-        cursor-pointer
-        p-6
-        flex flex-col
-        text-white
-      "
+      className="group w-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:border-[#e4ae0b]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#e4ae0b]/5 flex flex-col cursor-pointer"
     >
-      {/* Title */}
-      <h3 className="text-xl font-bold mb-4 text-center">
-        {title}
-      </h3>
-
       {/* Image */}
-      <div
-        className="
-          w-full
-          h-56
-          rounded-xl
-          bg-cover bg-center
-          border border-white/20
-        "
-        style={{ backgroundImage: `url(${image})` }}
-      />
+      <div className="relative w-full h-48 overflow-hidden">
+        <div
+          className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+          style={{ backgroundImage: `url(${image})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+        {category && (
+          <span className={`absolute top-3 right-3 text-xs font-bold px-3 py-1 rounded-full border ${badgeClass}`}>
+            {category}
+          </span>
+        )}
+      </div>
 
-      {/* Date */}
-      <p className="mt-3 text-sm text-gray-300 text-center">
-        {date}
-      </p>
-
-      {/* Link hint */}
-      <p className="mt-4 text-sm text-[#e4ae0b] text-center opacity-80">
-        Click to view certificate →
-      </p>
+      {/* Content */}
+      <div className="flex flex-col flex-1 p-5">
+        <h3 className="font-bold text-base text-white leading-snug mb-1.5 group-hover:text-[#e4ae0b] transition-colors">
+          {title}
+        </h3>
+        <p className="text-gray-400 text-sm">{date}</p>
+        <div className="mt-auto pt-4 flex items-center justify-between">
+          <span className="text-[#e4ae0b] text-xs font-semibold uppercase tracking-wider">
+            View Certificate →
+          </span>
+          <span className="w-7 h-7 rounded-full border border-[#e4ae0b]/30 flex items-center justify-center group-hover:bg-[#e4ae0b] group-hover:border-[#e4ae0b] transition-all duration-200">
+            <svg className="w-3 h-3 text-[#e4ae0b] group-hover:text-black transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15M4.5 4.5h15v15" />
+            </svg>
+          </span>
+        </div>
+      </div>
     </a>
   )
 }
