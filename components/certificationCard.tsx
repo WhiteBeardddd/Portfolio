@@ -7,13 +7,12 @@ export type Certificate = {
   date: string
   category?: string
 }
-
 const categoryBadge: Record<string, string> = {
-  Cybersecurity: "text-blue-400 border-blue-400/40 bg-blue-400/10",
-  Networking: "text-green-400 border-green-400/40 bg-green-400/10",
-  Cloud: "text-purple-400 border-purple-400/40 bg-purple-400/10",
-  Events: "text-pink-400 border-pink-400/40 bg-pink-400/10",
-  Hackathon: "text-orange-400 border-orange-400/40 bg-orange-400/10",
+  Cybersecurity: "text-white border-blue-500 bg-blue-600",
+  Networking: "text-white border-green-500 bg-green-600",
+  Cloud: "text-white border-purple-500 bg-purple-600",
+  Events: "text-white border-pink-500 bg-pink-600",
+  Hackathon: "text-white border-orange-500 bg-orange-500",
 }
 
 const CertCard = ({ title, image, url, date, category }: Certificate) => {

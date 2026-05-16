@@ -4,7 +4,7 @@ import { useState } from "react"
 import ProjectCard from "@/components/projectCard"
 import type { Project } from "@/types/project"
 
-type Category = "All" | "Networking" | "Security" | "Mobile" | "Web & Fullstack"
+type Category = "All" | "Networking" | "Security" | "Mobile" | "Web & Fullstack" | "Game Development"
 
 const projects: (Project & { category: Category })[] = [
   {
@@ -136,7 +136,7 @@ const projects: (Project & { category: Category })[] = [
         <h1 className="font-bold mb-2 text-xl sm:text-2xl">Repository Links</h1>
         <ul className="list-disc ml-6 space-y-2">
           <li>Frontend: <a href="https://github.com/Gnashal/AgriKita" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
-          <li>BackEnd: <a href="https://github.com/Gnashal/Agrikita-backendi" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+          <li>BackEnd: <a href="https://github.com/Gnashal/Agrikita-backend" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
         </ul>
       </>
     ),
@@ -183,10 +183,71 @@ const projects: (Project & { category: Category })[] = [
     ),
     image: "/images/stockwise.png",
     url: "https://github.com/OppenJayme/SUMMER-IM2-FINAL-PROJECTS"
+  },{
+    title: "Home SIEM Lab Setup & SSH Brute Force Detection",
+    projectType: "Personal Project",
+    role: "Security Engineer / Lab Architect",
+    date: "Mar 2026",
+    category: "Security",
+    description: (
+      <>
+        <ul className="list-disc ml-6 space-y-2 mb-2">
+          <li>Deployed Splunk Enterprise on Windows as a fully functional home SIEM, ingesting real-time logs from a Kali Linux VM via Splunk Universal Forwarder.</li>
+          <li>Configured systemd journal log forwarding on Kali Linux to enable SSH authentication event monitoring in Splunk.</li>
+          <li>Simulated a realistic SSH brute force attack using Hydra, generating 33 detected failed login events captured and visible in Splunk Search & Reporting.</li>
+          <li>Validated end-to-end attacker/defender pipeline: attack execution on Kali → log forwarding → real-time SIEM detection on Windows.</li>
+        </ul>
+      </>
+    ),
+    image: "/images/seim-brutefroce-ssh.png",
+    url: "https://github.com/OppenJayme"
+  },{
+    title: "TaraBytes – Android + Supabase Mobile App",
+    projectType: "Software Quality Assurance Project",
+    role: "Lead Developer / Full-Stack Engineer",
+    date: "March 2026 - May 2026",
+    category: "Mobile",
+    description: (
+      <>
+        <ul className="list-disc ml-6 space-y-2 mb-2">
+          <li>Built a mobile application on Android using Java and XML, with Supabase as a fully managed Backend-as-a-Service (BaaS) — eliminating the need for a custom server.</li>
+          <li>Integrated Supabase Auth for user registration, login, and JWT-based session management, securing all subsequent API requests with token authorization.</li>
+          <li>Leveraged Supabase's auto-generated REST API over PostgreSQL for all structured data operations (GET, POST, PATCH, DELETE), with row-level security enforced at the database level.</li>
+          <li>Implemented Supabase Storage Buckets for image file management — uploading binary data, retrieving public/signed URLs, and writing references back to the database for on-demand rendering.</li>
+        </ul>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Repository Link</h1>
+        <ul className="list-disc ml-6 space-y-2">
+          <li>Client: <a href="https://github.com/WhiteBeardddd/TaraBytes" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+        </ul>
+      </>
+    ),
+    image: "/images/tarabytes.jpg",
+    url: "https://github.com/WhiteBeardddd/TaraBytes"
+  },{
+    title: "TTIGKAGASCIPTRMBIHTWHTGOOP",
+    projectType: "Game Development Project",
+    role: "Fullstack Game Developer",
+    date: "April 2026 - May 2026",
+    category: "Game Development",
+    description: (
+      <>
+        <ul className="list-disc ml-6 space-y-2 mb-2">
+          <li>Built a 2D platformer in Godot Engine (GDScript) with 7 maps, combat, and HP persistence across scenes.</li>
+          <li>Designed enemy AI, player mechanics, and an NPC dialogue system for interactive storytelling.</li>
+          <li>Implemented a local Leaderboard with score data saved and read from the game's user data folder.</li>
+        </ul>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Repository Link</h1>
+        <ul className="list-disc ml-6 space-y-2">
+          <li>Client: <a href="https://github.com/WhiteBeardddd/ttigkagasciptrmbihtwhtgoop" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+        </ul>
+      </>
+    ),
+    image: "/images/ttigkagasciptrmbihtwhtgoop.png", // 🔁 replace with your actual game screenshot
+    url: "https://github.com/WhiteBeardddd/ttigkagasciptrmbihtwhtgoop"
   }
 ]
 
-const categories: Category[] = ["All", "Networking", "Security", "Mobile", "Web & Fullstack"]
+const categories: Category[] = ["All", "Networking", "Security", "Mobile", "Web & Fullstack", "Game Development"]
 
 const categoryColors: Record<Category, string> = {
   All: "text-[#e4ae0b] border-[#e4ae0b]",
@@ -194,6 +255,7 @@ const categoryColors: Record<Category, string> = {
   Security: "text-blue-400 border-blue-400",
   Mobile: "text-pink-400 border-pink-400",
   "Web & Fullstack": "text-purple-400 border-purple-400",
+  "Game Development": "text-orange-400 border-orange-400",
 }
 
 const categoryBg: Record<Category, string> = {
@@ -202,6 +264,7 @@ const categoryBg: Record<Category, string> = {
   Security: "bg-blue-400/10",
   Mobile: "bg-pink-400/10",
   "Web & Fullstack": "bg-purple-400/10",
+  "Game Development": "bg-orange-400/10",
 }
 
 export default function ProjectsPage() {
@@ -226,7 +289,7 @@ export default function ProjectsPage() {
         <p className="text-xs sm:text-sm uppercase tracking-widest text-[#e4ae0b] font-semibold mb-3">
           ✦ My Work
         </p>
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+        <h1 className="text-3xl sm:text-5xl text-[#ffffff] lg:text-6xl font-extrabold tracking-tight leading-tight">
           School <span className="text-[#e4ae0b]">Projects</span>
         </h1>
         <p className="mt-3 text-gray-400 text-sm sm:text-base max-w-md mx-auto">
@@ -235,7 +298,7 @@ export default function ProjectsPage() {
 
         {/* Stats row */}
         <div className="mt-8 flex justify-center gap-6 sm:gap-10">
-          {(["All", "Networking", "Security", "Mobile", "Web & Fullstack"] as Category[]).slice(1).map((cat) => (
+          {(["Networking", "Security", "Mobile", "Web & Fullstack", "Game Development"] as Category[]).map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}

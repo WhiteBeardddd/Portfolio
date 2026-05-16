@@ -53,7 +53,7 @@ const featuredProjects = [
     image: "/images/kali_desktop_view.jpg",
     url: "/files/Network Security Final Project.pdf",
     tag: "Security",
-    tagColor: "text-blue-400 border-blue-400 bg-blue-400/10",
+    tagColor: "text-white border-blue-400 bg-blue-400",
   },
   {
     title: "P2P Encrypted Communication System",
@@ -63,7 +63,7 @@ const featuredProjects = [
     image: "/images/p2p.png",
     url: "https://github.com/WhiteBeardddd/Final-Project-IAS",
     tag: "Security",
-    tagColor: "text-blue-400 border-blue-400 bg-blue-400/10",
+    tagColor: "text-white border-blue-400 bg-blue-400",
   },
   {
     title: "Stockwise",
@@ -73,7 +73,7 @@ const featuredProjects = [
     image: "/images/stockwise.png",
     url: "https://github.com/OppenJayme/SUMMER-IM2-FINAL-PROJECTS",
     tag: "Web & Fullstack",
-    tagColor: "text-purple-400 border-purple-400 bg-purple-400/10",
+    tagColor: "text-white border-purple-400 bg-purple-400",
   },
 ];
 
@@ -150,7 +150,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-4 text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl"
           >
-            BS IT Student @ University of San Carlos · Networking · CyberOps · Digital Forensics
+            BS IT Student @ University of San Carlos · Networking · CyberOps
           </motion.p>
 
           <motion.p
@@ -385,8 +385,8 @@ export default function Home() {
                   <Image
                     src={item.icon}
                     alt={item.label}
-                    width={22}
-                    height={22}
+                    width={200}
+                    height={200}
                     className="w-5 h-5 sm:w-6 sm:h-6"
                   />
                   <span>{item.label}</span>

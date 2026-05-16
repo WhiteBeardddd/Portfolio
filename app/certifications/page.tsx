@@ -106,7 +106,7 @@ export default function CertificationsPage() {
         <p className="text-xs sm:text-sm uppercase tracking-widest text-[#e4ae0b] font-semibold mb-3">
           ✦ Credentials
         </p>
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+        <h1 className="text-3xl sm:text-5xl text-[#ffffff] lg:text-6xl font-extrabold tracking-tight leading-tight">
           Certifications &amp; <span className="text-[#e4ae0b]">Trainings</span>
         </h1>
         <p className="mt-3 text-gray-400 text-sm sm:text-base max-w-md mx-auto">
