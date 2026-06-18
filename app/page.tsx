@@ -150,7 +150,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-4 text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl"
           >
-            BS IT Student @ University of San Carlos · Networking · CyberOps
+            BS IT Student @ University of San Carlos · Networking · CyberOps · Software Developer
           </motion.p>
 
           <motion.p

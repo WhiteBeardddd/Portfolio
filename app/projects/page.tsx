@@ -242,7 +242,7 @@ const projects: (Project & { category: Category })[] = [
         </ul>
       </>
     ),
-    image: "/images/ttigkagasciptrmbihtwhtgoop.png", // 🔁 replace with your actual game screenshot
+    image: "/images/gamedev.png", 
     url: "https://github.com/WhiteBeardddd/ttigkagasciptrmbihtwhtgoop"
   }
 ]
