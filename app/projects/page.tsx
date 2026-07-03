@@ -110,10 +110,10 @@ const projects: (Project & { category: Category })[] = [
           <li>Implemented alarm notification system triggered by nearby emergency signals.</li>
           <li>Designed user-friendly interface for real-time alert monitoring.</li>
         </ul>
-        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Repository Links</h1>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Links</h1>
         <ul className="list-disc ml-6 space-y-2">
-          <li>Frontend: <a href="https://github.com/WhiteBeardddd/EV-Alert-System-FrontEnd" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
-          <li>BackEnd: <a href="https://github.com/Gnashal/evalert-api" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+          <li>Frontend Repository: <a href="https://github.com/WhiteBeardddd/EV-Alert-System-FrontEnd" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+          <li>Backend Repository: <a href="https://github.com/Gnashal/evalert-api" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
         </ul>
       </>
     ),
@@ -133,10 +133,10 @@ const projects: (Project & { category: Category })[] = [
           <li>Implemented product listing, buying, and selling functionalities.</li>
           <li>Designed responsive frontend interface for rural user accessibility.</li>
         </ul>
-        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Repository Links</h1>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Links</h1>
         <ul className="list-disc ml-6 space-y-2">
-          <li>Frontend: <a href="https://github.com/Gnashal/AgriKita" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
-          <li>BackEnd: <a href="https://github.com/Gnashal/Agrikita-backend" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+          <li>Frontend Repository: <a href="https://github.com/Gnashal/AgriKita" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+          <li>Backend Repository: <a href="https://github.com/Gnashal/Agrikita-backend" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
         </ul>
       </>
     ),
@@ -156,10 +156,10 @@ const projects: (Project & { category: Category })[] = [
           <li>Implemented secure authentication, transaction handling, and service integration.</li>
           <li>Integrated multiple backend services with scalable system design.</li>
         </ul>
-        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Repository Links</h1>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Links</h1>
         <ul className="list-disc ml-6 space-y-2">
-          <li>Frontend: <a href="https://github.com/23000003/Finnbank-web" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
-          <li>BackEnd: <a href="https://github.com/23000003/Finnbank" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+          <li>Frontend Repository: <a href="https://github.com/23000003/Finnbank-web" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+          <li>Backend Repository: <a href="https://github.com/23000003/Finnbank" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
         </ul>
       </>
     ),
@@ -179,11 +179,39 @@ const projects: (Project & { category: Category })[] = [
           <li>Implemented stock tracking, product management, and database synchronization.</li>
           <li>Designed responsive UI and user-friendly dashboard interface.</li>
         </ul>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Links</h1>
+        <ul className="list-disc ml-6 space-y-2">
+          <li>Repository Link: <a href="https://github.com/OppenJayme/SUMMER-IM2-FINAL-PROJECTS"className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>    
+          </ul>
       </>
     ),
     image: "/images/stockwise.png",
     url: "https://github.com/OppenJayme/SUMMER-IM2-FINAL-PROJECTS"
-  },{
+  },
+  {
+    title: "CubeTech HRMS",
+    projectType: "Internship Technical Assessment · CubeTech Innovations",
+    role: "FullStack Developer",
+    date: "2026",
+    category: "Web & Fullstack",
+    description: (
+      <>
+        <ul className="list-disc ml-6 space-y-2 mb-2">
+          <li>Built a mini HR management system as a technical assessment for a CubeTech Innovations internship application.</li>
+          <li>Implemented core HR workflows using Next.js on the frontend with Supabase for authentication and data storage.</li>
+          <li>Handled deployment to Vercel along with UI refinements and print-friendly styling for document/report views.</li>
+        </ul>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Links</h1>
+        <ul className="list-disc ml-6 space-y-2">
+          <li>Repository Link: <a href="https://github.com/WhiteBeardddd/CubeTech-HRMS" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>    
+          <li>Live Demo: <a href="https://cubetech-hrms.vercel.app/login" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+        </ul>
+      </>
+    ),
+    image: "/images/cubetech.png",
+    url: "https://github.com/WhiteBeardddd/Mini-HRMS"
+  },
+  {
     title: "Home SIEM Lab Setup & SSH Brute Force Detection",
     projectType: "Personal Project",
     role: "Security Engineer / Lab Architect",
@@ -200,8 +228,9 @@ const projects: (Project & { category: Category })[] = [
       </>
     ),
     image: "/images/seim-brutefroce-ssh.png",
-    url: "https://github.com/OppenJayme"
-  },{
+    url: "/files/SIEM_SSH_BruteForce_Report_Documentation.pdf"
+  },
+  {
     title: "TaraBytes – Android + Supabase Mobile App",
     projectType: "Software Quality Assurance Project",
     role: "Lead Developer / Full-Stack Engineer",
@@ -215,15 +244,16 @@ const projects: (Project & { category: Category })[] = [
           <li>Leveraged Supabase's auto-generated REST API over PostgreSQL for all structured data operations (GET, POST, PATCH, DELETE), with row-level security enforced at the database level.</li>
           <li>Implemented Supabase Storage Buckets for image file management — uploading binary data, retrieving public/signed URLs, and writing references back to the database for on-demand rendering.</li>
         </ul>
-        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Repository Link</h1>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Link</h1>
         <ul className="list-disc ml-6 space-y-2">
-          <li>Client: <a href="https://github.com/WhiteBeardddd/TaraBytes" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+          <li>Repository Link: <a href="https://github.com/WhiteBeardddd/TaraBytes" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
         </ul>
       </>
     ),
     image: "/images/tarabytes.jpg",
     url: "https://github.com/WhiteBeardddd/TaraBytes"
-  },{
+  },
+  {
     title: "TTIGKAGASCIPTRMBIHTWHTGOOP",
     projectType: "Game Development Project",
     role: "Fullstack Game Developer",
@@ -236,9 +266,10 @@ const projects: (Project & { category: Category })[] = [
           <li>Designed enemy AI, player mechanics, and an NPC dialogue system for interactive storytelling.</li>
           <li>Implemented a local Leaderboard with score data saved and read from the game's user data folder.</li>
         </ul>
-        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Repository Link</h1>
+        <h1 className="font-bold mb-2 text-xl sm:text-2xl">Link</h1>
         <ul className="list-disc ml-6 space-y-2">
-          <li>Client: <a href="https://github.com/WhiteBeardddd/ttigkagasciptrmbihtwhtgoop" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+          <li>Dev Logs: <a href="https://www.youtube.com/playlist?list=PLEGKlBQ_-ct_TwAO4X9BDPEmizk1LJdgv" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
+          <li>Repository Link: <a href="https://github.com/WhiteBeardddd/ttigkagasciptrmbihtwhtgoop" className="text-[#4d6cdd] underline hover:text-[#f6c742]">Link</a></li>
         </ul>
       </>
     ),

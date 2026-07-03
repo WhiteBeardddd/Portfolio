@@ -34,7 +34,7 @@ Skills: Networking, CyberOps,
     out: `
 Hobby: I play survival games, moba, and watch anime
 Dota: 4k hours played | Divine III | 5k :)
-Valheim: 1.4 hours played | i love building stuffs here
+Valheim: 1.4k hours played | i love building stuffs here
     `.trim(),
   },
 ];
