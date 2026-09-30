@@ -1,91 +1,102 @@
-import React from "react"
-
-type CardProps = {
-  title: string
-  projectType: string
-  description: React.ReactNode
-  date: string
-  role: string
-  image: string
-  url: string
-  category?: string
-}
-
-const categoryBadge: Record<string, string> = {
-  Networking: "text-white border-green-500 bg-green-600",
-  Security: "text-white border-blue-500 bg-blue-600",
-  Mobile: "text-white border-pink-500 bg-pink-600",
-  "Web & Fullstack": "text-white border-purple-500 bg-purple-600",
-  "Game Development": "text-white border-orange-500 bg-orange-500"
-}
+import { categoryTone, type Project } from "@/lib/data"
+import StatusBadge from "@/components/statusBadge"
 
 const ProjectCard = ({
   title,
   projectType,
-  description,
-  date,
   role,
+  date,
+  category,
+  status,
   image,
   url,
-  category,
-}: CardProps) => {
-  const badgeClass = category ? categoryBadge[category] ?? "text-gray-400 border-gray-400/40 bg-gray-400/10" : ""
+  highlights,
+  stack,
+  links,
+}: Project) => {
+  const tone = categoryTone[category]
+  const ongoing = status === "Ongoing"
 
   return (
-    <div className="group w-full max-w-5xl mx-auto rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:border-[#e4ae0b]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#e4ae0b]/5">
+    <article
+      className={`group relative overflow-hidden rounded-2xl border bg-panel/80 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:shadow-accent/5 ${
+        ongoing ? "border-accent/25 hover:border-accent/50" : "border-white/10 hover:border-white/20"
+      }`}
+    >
       <div className="flex flex-col md:flex-row">
-
         {/* Image */}
-        <div className="relative md:w-64 lg:w-72 flex-shrink-0 h-52 md:h-auto overflow-hidden">
-          <div
-            className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-            style={{ backgroundImage: `url(${image})` }}
+        <div className="relative h-52 shrink-0 overflow-hidden md:h-auto md:w-72 lg:w-80">
+          <img
+            src={image}
+            alt=""
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/40 md:block hidden" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 md:hidden block" />
-          {category && (
-            <span className={`absolute top-3 left-3 text-xs font-bold px-3 py-1 rounded-full border ${badgeClass}`}>
-              {category}
-            </span>
-          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-panel via-panel/10 to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-panel/60" />
+          <StatusBadge status={status} className="absolute left-3 top-3" />
         </div>
 
         {/* Content */}
-        <div className="flex flex-col flex-1 p-5 sm:p-6">
-          {/* Header */}
-          <div className="flex items-start justify-between gap-3 mb-3">
-            <h3 className="text-lg sm:text-xl font-bold text-white leading-snug group-hover:text-[#e4ae0b] transition-colors">
-              {title}
-            </h3>
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-[#e4ae0b]/30 text-[#e4ae0b] text-xs font-bold hover:bg-[#e4ae0b] hover:text-black transition-all duration-200"
-            >
-              View →
-            </a>
+        <div className="flex flex-1 flex-col p-5 sm:p-6">
+          <div className="mb-2 flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider">
+            <span className={`h-1.5 w-1.5 rounded-full ${tone.dot}`} />
+            <span className={tone.text}>{category}</span>
+            <span className="text-white/20">/</span>
+            <span className="text-gray-500">{date}</span>
           </div>
 
-          {/* Meta */}
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-4">
-            <span className="text-gray-400 text-sm">{projectType}</span>
-            <span className="text-white/20 text-xs">•</span>
-            <span className="text-gray-500 text-xs">{role}</span>
-            <span className="text-white/20 text-xs">•</span>
-            <span className="text-gray-500 text-xs">{date}</span>
-          </div>
+          <h3 className="text-lg font-bold leading-snug text-white transition-colors group-hover:text-accent sm:text-xl">
+            {title}
+          </h3>
+          <p className="mt-1 text-sm text-gray-400">
+            {projectType} <span className="text-white/20">·</span> <span className="text-gray-500">{role}</span>
+          </p>
 
-          {/* Divider */}
-          <div className="w-full h-px bg-white/10 mb-4" />
+          <ul className="mt-4 space-y-2 border-t border-white/10 pt-4">
+            {highlights.map((item) => (
+              <li key={item} className="flex gap-3 text-sm leading-relaxed text-gray-400">
+                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent/70" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
 
-          {/* Description */}
-          <div className="text-gray-300 text-sm leading-relaxed [&_ul]:list-disc [&_ul]:ml-5 [&_ul]:space-y-1.5 [&_li]:text-gray-400 [&_h1]:font-bold [&_h1]:text-white [&_h1]:text-base [&_h1]:mt-3 [&_h1]:mb-1.5 [&_a]:text-[#e4ae0b] [&_a]:underline [&_a:hover]:text-[#f6c742]">
-            {description}
+          {stack && stack.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {stack.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-md border border-white/10 bg-white/[0.03] px-2 py-0.5 font-mono text-[11px] text-gray-300"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+
+          <div className="mt-5 flex flex-wrap items-center gap-2 pt-1">
+            {(links && links.length > 0 ? links : [{ label: "View Project", href: url }]).map((link, i) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-200 ${
+                  i === 0
+                    ? "bg-accent text-black hover:bg-accent-soft"
+                    : "border border-white/15 text-gray-200 hover:border-accent hover:text-accent"
+                }`}
+              >
+                {link.label}
+                <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 17 17 7M8 7h9v9" />
+                </svg>
+              </a>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
 

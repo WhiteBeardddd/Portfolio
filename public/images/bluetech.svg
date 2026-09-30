@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1b3a"/>
+      <stop offset="0.6" stop-color="#0a2a66"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" stroke="#ffffff" stroke-opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#g)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  <g stroke="#93c5fd" stroke-opacity="0.5" stroke-width="1.5">
+    <rect x="470" y="120" width="120" height="80" rx="10"/>
+    <rect x="620" y="120" width="120" height="80" rx="10"/>
+    <rect x="470" y="250" width="120" height="80" rx="10" stroke-dasharray="4 6"/>
+    <rect x="620" y="250" width="120" height="80" rx="10" stroke-dasharray="4 6"/>
+    <path d="M530 200v50M680 200v50"/>
+  </g>
+  <g font-family="ui-monospace, monospace" font-size="14" fill="#bfdbfe">
+    <text x="490" y="166">JobBoard</text>
+    <text x="648" y="166">HRMS</text>
+    <text x="508" y="296" fill-opacity="0.8">api</text>
+    <text x="658" y="296" fill-opacity="0.8">api</text>
+  </g>
+  <text x="56" y="210" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="56" font-weight="800" letter-spacing="-1">BlueTech</text>
+  <text x="58" y="250" fill="#93c5fd" font-family="ui-monospace, monospace" font-size="18" letter-spacing="2">JOB BOARD · HRMS MONOREPO</text>
+</svg>
