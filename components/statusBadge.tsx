@@ -4,7 +4,7 @@ export default function StatusBadge({ status, className = "" }: { status: Projec
   if (status === "Ongoing") {
     return (
       <span
-        className={`inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-black/70 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-accent backdrop-blur ${className}`}
+        className={`inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-ink/80 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-accent-soft backdrop-blur ${className}`}
       >
         <span className="relative flex h-1.5 w-1.5">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
@@ -17,9 +17,9 @@ export default function StatusBadge({ status, className = "" }: { status: Projec
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-black/70 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-gray-300 backdrop-blur ${className}`}
+      className={`inline-flex items-center gap-1.5 rounded-full border border-line bg-ink/80 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-muted backdrop-blur ${className}`}
     >
-      <svg className="h-2.5 w-2.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth={2}>
+      <svg aria-hidden className="h-2.5 w-2.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth={2}>
         <path d="M2 6.5 4.5 9 10 3" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
       Completed

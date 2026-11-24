@@ -49,7 +49,7 @@ function Prompt({ user, cmd }: { user: string; cmd?: string }) {
   return (
     <div className="whitespace-pre-wrap break-all">
       <span className="text-accent">{user}</span>
-      <span className="ml-1 text-[#7aa2f7]">~</span>
+      <span className="ml-1 text-sky-300">~</span>
       <span className="ml-1 text-white">$</span>
       {cmd && <span className="ml-1.5 text-gray-200">{cmd}</span>}
     </div>
@@ -58,7 +58,7 @@ function Prompt({ user, cmd }: { user: string; cmd?: string }) {
 
 export default function TerminalCard() {
   return (
-    <div className="overflow-hidden rounded-xl border border-white/10 bg-[#0b0f14] shadow-2xl shadow-black/60">
+    <div className="overflow-hidden rounded-xl border border-line bg-[#070d19] shadow-2xl shadow-black/60">
       <div className="flex h-9 items-center gap-2 border-b border-white/5 bg-white/[0.03] px-4">
         <span className="h-3 w-3 rounded-full bg-[#ff5f56]" />
         <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />

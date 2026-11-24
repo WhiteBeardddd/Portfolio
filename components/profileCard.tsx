@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const orbitIcons = [
   { img: "/images/cisco.png", label: "Cisco" },
   { img: "/images/linux.png", label: "Linux" },
@@ -12,9 +14,9 @@ export default function ProfileCard() {
   return (
     <div className="relative mx-auto aspect-square w-full max-w-[420px]">
       {/* Rings */}
-      <div className="absolute inset-0 rounded-full border border-dashed border-white/15" />
-      <div className="absolute inset-[18%] rounded-full border border-white/5" />
-      <div className="absolute inset-[22%] rounded-full bg-accent/10 blur-3xl" />
+      <div className="absolute inset-0 rounded-full border border-dashed border-accent/20" />
+      <div className="absolute inset-[18%] rounded-full border border-line/50" />
+      <div className="absolute inset-[22%] rounded-full bg-accent-strong/20 blur-3xl" />
 
       {/* Rotating tool icons; each icon counter-rotates so it stays upright */}
       <div className="absolute inset-0 animate-orbit">
@@ -30,9 +32,9 @@ export default function ProfileCard() {
             >
               <span
                 title={icon.label}
-                className="block h-10 w-10 animate-orbit-reverse rounded-full border border-white/15 bg-white p-1.5 shadow-lg shadow-black/50 sm:h-12 sm:w-12"
+                className="block h-10 w-10 animate-orbit-reverse rounded-full border border-line bg-white p-1.5 shadow-lg shadow-black/50 sm:h-12 sm:w-12"
               >
-                <img src={icon.img} alt={icon.label} className="h-full w-full rounded-full object-contain" />
+                <Image src={icon.img} alt={icon.label} width={48} height={48} className="h-full w-full rounded-full object-contain" />
               </span>
             </div>
           );
@@ -42,12 +44,12 @@ export default function ProfileCard() {
       {/* Portrait */}
       <div className="absolute inset-[24%] rounded-full border border-accent/40 p-1.5">
         <div className="h-full w-full overflow-hidden rounded-full bg-white">
-          <img src="/images/charles.png" alt="Charles Benedict Boquecosa" className="h-full w-full object-cover" />
+          <Image src="/images/charles.png" alt="Charles Benedict Boquecosa" width={240} height={240} preload className="h-full w-full object-cover" />
         </div>
       </div>
 
       {/* Current role tag */}
-      <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-ink/90 px-3 py-1.5 font-mono text-[11px] text-gray-300 shadow-lg backdrop-blur">
+      <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-line bg-ink/90 px-3 py-1.5 font-mono text-[11px] text-muted shadow-lg backdrop-blur">
         <span className="text-accent">●</span> IT Intern @ Accenture
       </div>
     </div>
