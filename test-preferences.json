@@ -1,0 +1,9 @@
+{
+  "tool": "vitest",
+  "gate": null,
+  "additionalTools": [],
+  "e2eTool": "none (crawl with tools/check-links.mjs; drive pages with playwright-cli when behaviour matters)",
+  "testDir": "beside the source (lib/**/*.test.ts)",
+  "filePattern": "*.test.ts",
+  "packageManager": "npm"
+}

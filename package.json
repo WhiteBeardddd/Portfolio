@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run",
+    "check:links": "node tools/check-links.mjs",
+    "check:links:external": "node tools/check-links.mjs --external"
   },
   "dependencies": {
     "framer-motion": "^12.29.0",
@@ -23,6 +26,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.11"
   }
 }
